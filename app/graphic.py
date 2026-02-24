@@ -1,11 +1,3 @@
-# ============================================================
-# MERGED FILE = (graphic1.py) + (graphic - Copy (4).py)
-# Uses RELATIVE paths - works on any computer!
-# ============================================================
-
-# ============================================================
-# FILE A: DOCX -> Extract 7 Figures (FROM graphic1.py)
-# ============================================================
 
 import os, io
 import numpy as np
@@ -13,9 +5,9 @@ from docx import Document
 from PIL import Image, ImageDraw
 from pathlib import Path
 
-# =========================
+
 # AUTO-DETECT PATHS (works on any computer)
-# =========================
+
 # Get the directory where this script is located
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -32,13 +24,8 @@ EXTRACT_FINAL_DIR = os.path.join(EXTRACT_OUT_DIR, "final_7")
 EXTRACT_EXCLUDE_DEBUG_CANDIDATES = set(
 )  # Don't skip any - we need all 7 for proper order mapping
 
-# =============================
+
 # FIGURE ORDER MAPPING (to match document order)
-# =============================
-# Maps: extracted_index -> correct_figure_number
-# Example: If extracted Figure_1 should be Figure 2 in document, use {1: 2}
-# Set to None to keep original extraction order (sorted by size)
-# Set to a dict to reorder: {old_idx: new_idx, ...}
 FIGURE_ORDER_MAP = {
     1: 3,  # Extracted 1 (line chart) -> Figure 3
     2: 1,  # Extracted 2 (infographic) -> Figure 1 
@@ -50,9 +37,9 @@ FIGURE_ORDER_MAP = {
 }
 # To reorder: Change the values. Example: {1: 2, 2: 1} swaps Fig1 and Fig2
 
-# =========================
+
 # FILTER SETTINGS (SAFE)
-# =========================
+
 EXTRACT_MIN_AREA = 100_000  # small icons get removed
 EXTRACT_MIN_W = 280
 EXTRACT_MIN_H = 210
@@ -67,9 +54,9 @@ EXTRACT_CROP_TOL = 10  # lower tolerance to avoid treating light-gray panels as 
 EXTRACT_CROP_PAD = 24  # more padding to preserve rounded corners and margins
 
 
-# =========================
+
 # HELPERS
-# =========================
+
 def extract_light_crop(img: Image.Image,
                        pad=EXTRACT_CROP_PAD,
                        tol=EXTRACT_CROP_TOL):
@@ -214,9 +201,9 @@ def extract_is_symbol_or_stripe(img: Image.Image):
     return False
 
 
-# =========================
-# FIGURE 6 (plain grid): generate a clean grid image with NO TEXT
-# =========================
+
+# generate a clean grid image with NO TEXT
+
 def generate_plain_grid_figure6(out_png_path: str,
                                 width: int = 700,
                                 height: int = 450,
@@ -263,9 +250,9 @@ def generate_plain_grid_figure6(out_png_path: str,
     return img
 
 
-# =========================
-# FIGURE 5 (special): render page and crop Figure 5 panel
-# =========================
+
+#render page and crop Figure 5 panel
+
 def extract_figure5_via_render(docx_path: str,
                                out_png_path: str,
                                dpi: int = 200):
@@ -314,9 +301,9 @@ def extract_figure5_via_render(docx_path: str,
         return crop
 
 
-# =========================
+
 # MAIN
-# =========================
+
 def main_docx_extract():
     os.makedirs(EXTRACT_OUT_DIR, exist_ok=True)
     os.makedirs(EXTRACT_DEBUG_DIR, exist_ok=True)
@@ -431,20 +418,15 @@ def main_docx_extract():
     print("\nDONE ✅")
     print("Final 7 saved in:", EXTRACT_FINAL_DIR)
 
-
-# ============================================================
-# FILE B: Images -> OCR -> JSON (FROM graphic - Copy (4).py)
-# ============================================================
-
 import json
 from pathlib import Path
 
 import cv2
 import pytesseract
 
-# =============================
+
 # CONFIG (AUTO-DETECT PATHS - works on any computer)
-# =============================
+
 # Use SCRIPT_DIR from Part A (already defined above)
 IMAGES = [str(UPLOAD_DIR / f"figure_{i}.png") for i in range(7)]
 
@@ -482,9 +464,9 @@ FIG0_TITLE_MAX_BOTTOM = 0.36  # allow title to extend slightly lower
 FIG0_MIN_TITLE_LINES = 2  # only merge if at least 2 lines found
 
 
-# =============================
+
 # Helpers
-# =============================
+
 def median(vals):
     vals = sorted(vals)
     if not vals:
@@ -605,14 +587,13 @@ def can_be_same_paragraph(a, b):
     return True
 
 
-# =============================
 # OCR ENGINE SELECTION
-# =============================
+
 # Set to "google" for best accuracy, "easyocr" for colored text, or "tesseract" for compatibility
 OCR_ENGINE = "easyocr"  # Options: "google", "easyocr", or "tesseract"
 
 # Google Vision API Key
-GOOGLE_VISION_API_KEY = "AIzaSyCkHPaenlrEL1Dty5vavK7okp8u8Sq7qPk"
+GOOGLE_VISION_API_KEY = "Enter you own key"
 
 # EasyOCR reader (initialized lazily)
 _easyocr_reader = None
@@ -630,9 +611,9 @@ def get_easyocr_reader():
     return _easyocr_reader
 
 
-# =============================
+
 # OCR words (EasyOCR version)
-# =============================
+
 def ocr_words_easyocr(image_path: str):
     reader = get_easyocr_reader()
     if reader is None:
@@ -682,9 +663,9 @@ def ocr_words_easyocr(image_path: str):
     return words, W, H
 
 
-# =============================
+
 # OCR words (Google Vision version)
-# =============================
+
 def ocr_words_google(image_path: str):
     import requests
     import base64
@@ -767,9 +748,9 @@ def ocr_words_google(image_path: str):
     return words, W, H
 
 
-# =============================
+
 # OCR words (Tesseract version)
-# =============================
+
 def ocr_words_tesseract(image_path: str):
     img = cv2.imread(image_path)
     if img is None:
@@ -834,9 +815,9 @@ def ocr_words_tesseract(image_path: str):
     return words, W, H
 
 
-# =============================
+
 # OCR words (auto-select engine)
-# =============================
+
 def ocr_words(image_path: str):
     if OCR_ENGINE == "google":
         try:
@@ -859,9 +840,9 @@ def ocr_words(image_path: str):
         return ocr_words_tesseract(image_path)
 
 
-# =============================
+
 # Build line boxes
-# =============================
+
 def words_to_line_boxes(words):
     if not words:
         return []
@@ -907,9 +888,9 @@ def words_to_line_boxes(words):
     return line_boxes
 
 
-# =============================
+
 # Merge paragraphs (general)
-# =============================
+
 def merge_paragraphs(line_boxes):
     if not line_boxes:
         return []
@@ -945,9 +926,9 @@ def merge_paragraphs(line_boxes):
     return merged
 
 
-# =============================
+
 # HARD FIX: merge ALL title lines in Fig0 into ONE textbox
-# =============================
+
 def force_merge_title_block_if_fig0(textboxes, W, H, fig_index_zero_based):
     if fig_index_zero_based != 0:
         return textboxes
@@ -998,15 +979,15 @@ def add_ids(textboxes):
     return textboxes
 
 
-# =============================
+
 # SKIP IF JSON EXISTS (preserves manual edits)
-# =============================
+
 SKIP_IF_JSON_EXISTS = True  # Set to False to always regenerate
 
 
-# =============================
+
 # MAIN
-# =============================
+
 def main_json_ocr():
     combined = {"figures": []}
 
@@ -1058,9 +1039,9 @@ def main_json_ocr():
     print(f"\n✅ Saved combined: {all_file.resolve()}")
 
 
-# ============================================================
+
 # RUN BOTH (one file)
-# ============================================================
+
 if __name__ == "__main__":
     # 1) Extract images from DOCX -> only_7_figures_output/final_7/
     main_docx_extract()
