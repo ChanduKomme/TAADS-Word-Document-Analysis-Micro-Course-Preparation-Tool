@@ -1,0 +1,260 @@
+{
+  "figure_id": "Figure 1",
+  "image_path": "/home/runner/workspace/data/uploads/figure_0.png",
+  "width": 4740,
+  "height": 2265,
+  "textboxes": [
+    {
+      "text": "A Attitudes toward the role of women are becoming more egalitarian in Germany—however, this trend is less pronounced among younger respondents",
+      "x": 117,
+      "y": 463,
+      "w": 4172,
+      "h": 179,
+      "conf": 0.91,
+      "id": "tb_00001"
+    },
+    {
+      "text": "INDEX OF ATTITUDES in the areas of education, work, and politics",
+      "x": 165,
+      "y": 759,
+      "w": 2000,
+      "h": 100,
+      "conf": 0.90,
+      "id": "tb_00002"
+    },
+    {
+      "text": "ATTITUDES TOWARD GENDER EQUALITY by age in Germany (2017)",
+      "x": 2200,
+      "y": 759,
+      "w": 2000,
+      "h": 100,
+      "conf": 0.90,
+      "id": "tb_00003"
+    },
+    {
+      "text": "\"University education is more important for boys than for girls\"",
+      "x": 529,
+      "y": 1029,
+      "w": 700,
+      "h": 200,
+      "conf": 0.90,
+      "id": "tb_00004"
+    },
+    {
+      "text": "Equality-oriented",
+      "x": 1938,
+      "y": 999,
+      "w": 480,
+      "h": 62,
+      "conf": 0.91,
+      "id": "tb_00005"
+    },
+    {
+      "text": "Attitudes",
+      "x": 2062,
+      "y": 1080,
+      "w": 252,
+      "h": 49,
+      "conf": 0.78,
+      "id": "tb_00006"
+    },
+    {
+      "text": "1",
+      "x": 2480,
+      "y": 1000,
+      "w": 50,
+      "h": 50,
+      "conf": 0.95,
+      "id": "tb_00007"
+    },
+    {
+      "text": "DISAGREE",
+      "x": 1600,
+      "y": 1150,
+      "w": 300,
+      "h": 50,
+      "conf": 0.90,
+      "id": "tb_00008"
+    },
+    {
+      "text": "0.75",
+      "x": 2460,
+      "y": 1286,
+      "w": 123,
+      "h": 41,
+      "conf": 0.91,
+      "id": "tb_00009"
+    },
+    {
+      "text": "\"Men should have more rights to a job than women when jobs are scarce\"",
+      "x": 490,
+      "y": 1408,
+      "w": 900,
+      "h": 250,
+      "conf": 0.90,
+      "id": "tb_00010"
+    },
+    {
+      "text": "0.5",
+      "x": 2460,
+      "y": 1550,
+      "w": 100,
+      "h": 41,
+      "conf": 0.91,
+      "id": "tb_00011"
+    },
+    {
+      "text": "\"Men are better political leaders than women\"",
+      "x": 492,
+      "y": 1849,
+      "w": 798,
+      "h": 140,
+      "conf": 0.84,
+      "id": "tb_00012"
+    },
+    {
+      "text": "AGREE",
+      "x": 1628,
+      "y": 1797,
+      "w": 219,
+      "h": 48,
+      "conf": 0.90,
+      "id": "tb_00013"
+    },
+    {
+      "text": "0.25",
+      "x": 2457,
+      "y": 2006,
+      "w": 124,
+      "h": 41,
+      "conf": 0.92,
+      "id": "tb_00014"
+    },
+    {
+      "text": "Traditional",
+      "x": 2025,
+      "y": 2139,
+      "w": 300,
+      "h": 82,
+      "conf": 0.95,
+      "id": "tb_00015"
+    },
+    {
+      "text": "Attitudes",
+      "x": 2056,
+      "y": 2211,
+      "w": 256,
+      "h": 49,
+      "conf": 0.89,
+      "id": "tb_00016"
+    },
+    {
+      "text": "0",
+      "x": 2480,
+      "y": 2250,
+      "w": 50,
+      "h": 50,
+      "conf": 0.95,
+      "id": "tb_00017"
+    },
+    {
+      "text": "92",
+      "x": 2600,
+      "y": 2139,
+      "w": 80,
+      "h": 50,
+      "conf": 0.95,
+      "id": "tb_00018"
+    },
+    {
+      "text": "82",
+      "x": 2850,
+      "y": 2139,
+      "w": 80,
+      "h": 50,
+      "conf": 0.95,
+      "id": "tb_00019"
+    },
+    {
+      "text": "72",
+      "x": 3100,
+      "y": 2139,
+      "w": 80,
+      "h": 50,
+      "conf": 0.95,
+      "id": "tb_00020"
+    },
+    {
+      "text": "62",
+      "x": 3350,
+      "y": 2139,
+      "w": 80,
+      "h": 50,
+      "conf": 0.95,
+      "id": "tb_00021"
+    },
+    {
+      "text": "52",
+      "x": 3600,
+      "y": 2139,
+      "w": 80,
+      "h": 50,
+      "conf": 0.95,
+      "id": "tb_00022"
+    },
+    {
+      "text": "42",
+      "x": 3850,
+      "y": 2139,
+      "w": 80,
+      "h": 50,
+      "conf": 0.95,
+      "id": "tb_00023"
+    },
+    {
+      "text": "32",
+      "x": 4100,
+      "y": 2139,
+      "w": 80,
+      "h": 50,
+      "conf": 0.95,
+      "id": "tb_00024"
+    },
+    {
+      "text": "22",
+      "x": 4350,
+      "y": 2139,
+      "w": 80,
+      "h": 50,
+      "conf": 0.95,
+      "id": "tb_00025"
+    },
+    {
+      "text": "Age",
+      "x": 3400,
+      "y": 2220,
+      "w": 100,
+      "h": 50,
+      "conf": 0.95,
+      "id": "tb_00026"
+    },
+    {
+      "text": "Source: Integrated Values Survey (wave 7, 2017).",
+      "x": 2600,
+      "y": 2300,
+      "w": 1500,
+      "h": 50,
+      "conf": 0.90,
+      "id": "tb_00027"
+    },
+    {
+      "text": "© DIW Berlin 2025A",
+      "x": 4200,
+      "y": 2300,
+      "w": 500,
+      "h": 50,
+      "conf": 0.90,
+      "id": "tb_00028"
+    }
+  ]
+}
