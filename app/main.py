@@ -94,9 +94,9 @@ def google_translate_free(text: str, target_lang: str) -> str:
         return text
 
 
-# =========================
+
 #   WORD DOCUMENT METADATA EXTRACTION
-# =========================
+
 
 def extract_word_document_title(docx_path):
     """Extract the document title from Word document metadata or first heading."""
@@ -160,9 +160,9 @@ def extract_word_document_title(docx_path):
     return title
 
 
-# =========================
+
 #   WORD DOCUMENT FIGURE EXTRACTION
-# =========================
+
 
 def extract_figures_from_word(docx_path, render_dir=None, zoom=2.0):
     """
@@ -242,9 +242,7 @@ def extract_figures_from_word(docx_path, render_dir=None, zoom=2.0):
     return figures
 
 
-# =========================
-#   FIGURE ORDERING
-# =========================
+
 def _safe_int(x, default=10**9):
     try:
         return int(x)
@@ -967,9 +965,9 @@ except Exception:
         pass
 
 
-# =========================
+
 #   THEME + HELPERS
-# =========================
+
 def apply_theme():
     st.markdown(
         """
@@ -1548,9 +1546,9 @@ def extract_bullet_points(text: str, max_bullets: int = 6) -> list:
     return bullets[:max_bullets]
 
 
-# =========================
+
 #   TRANSLATION SUPPORT
-# =========================
+
 LANGUAGES = {
     "English": "en",
     "German": "de",
@@ -3000,9 +2998,9 @@ def render_annotated_table(tbl: dict, preview_width: int):
     return im
 
 
-# =========================
+
 #   APP
-# =========================
+
 st.set_page_config(page_title="DocuSlide Pro | Word Document Analysis & Presentation",
                    page_icon="📊",
                    layout="centered")
@@ -3995,7 +3993,7 @@ if uploaded is not None:
                     s['id'], {}).get('deleted', False):
                 ordered_sections.append(s)
 
-        # ========== CHAPTER PRIORITY REORDER ==========
+        # CHAPTER PRIORITY REORDER 
         st.markdown("### 📚 Which chapter do you want to study first?")
         st.caption(
             "Drag chapters to prioritize your study order. The first chapter will appear at the top."
