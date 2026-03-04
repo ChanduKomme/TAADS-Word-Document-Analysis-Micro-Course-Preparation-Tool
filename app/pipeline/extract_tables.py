@@ -6,7 +6,7 @@ import fitz  # PyMuPDF
 import pdfplumber
 
 
-# ----------------- small helpers -----------------
+#  small helpers 
 
 def _grid_dims(grid: List[List[str]]) -> Tuple[int, int]:
     nrows = len(grid)
