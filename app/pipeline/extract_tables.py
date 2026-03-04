@@ -85,7 +85,7 @@ def _clip_png(doc: fitz.Document, page_idx: int, bbox: Tuple[float, float, float
     pm.save(str(out_path))
 
 
-# ----------------- line-grid support (reject charts) -----------------
+#line-grid support (reject charts) 
 
 def _line_support(pl_page: pdfplumber.page.Page, bbox: Tuple[float, float, float, float]) -> Tuple[int, int, float, float]:
     x0, y0, x1, y1 = bbox
@@ -134,7 +134,7 @@ def _line_support(pl_page: pdfplumber.page.Page, bbox: Tuple[float, float, float
     return h_count, v_count, h_len, v_len
 
 
-# ----------------- main extractor -----------------
+#  main extractor 
 
 def extract_tables_with_coords(
     pdf_path: Path,
