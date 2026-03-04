@@ -64,8 +64,7 @@ def _is_header_footer_line(l: str) -> bool:
     if re.search(r"Department\s+at\s+DIW\s+Berlin", l, re.I):
         return True
 
-    # Note: Don't filter entire lines starting with "When comparing" or "In a European comparison"
-    # These will be cleaned inline in _clean_structural_blocks instead
+  
 
     # SPECIFIC: Chart/figure titles, captions, and legend items
     # Always filter these chart-specific patterns (length-tolerant for chart titles)
