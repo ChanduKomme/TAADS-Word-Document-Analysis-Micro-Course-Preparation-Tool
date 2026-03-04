@@ -12,9 +12,9 @@ from pipeline.extract_tables import extract_tables_with_coords
 
 from pipeline.ai_summarizer import initialize_openai_client, generate_section_summary, generate_section_identifier_ollama
 
-# ============================================================================
+
 #  PROPER SECTION EXTRACTION WITH CALLOUT BOX & HEADING DETECTION
-# ============================================================================
+
 
 
 def _normalize_whitespace(s: str) -> str:
@@ -1352,16 +1352,15 @@ def chunk_into_sections(
           regardless of the parameters passed.
     """
 
-    # ===================================================================
+   
     # STEP 0: Build exclusion zones (figures + tables) for spatial filtering
-    # ===================================================================
+   
     figure_exclusion_zones = {}
     if pdf_path:
         figure_exclusion_zones = _build_exclusion_zones(pdf_path)
 
-    # ===================================================================
     # STEP 1: Build global boundary index (headings + callouts)
-    # ===================================================================
+ 
 
     # Extract headings using font analysis
     headings = []
@@ -1488,9 +1487,9 @@ def chunk_into_sections(
         or _is_callout_title(b.get("text", ""))
     ]
 
-    # ===================================================================
+ 
     # STEP 2: Extract paragraphs with bounding boxes from PDF
-    # ===================================================================
+ 
 
     all_paragraphs = []
 
@@ -1768,9 +1767,9 @@ def chunk_into_sections(
 
     all_paragraphs.sort(key=intelligent_sort_key)
 
-    # ===================================================================
+ 
     # STEP 3: Build sections by collecting paragraphs between boundaries
-    # ===================================================================
+   
 
     sections = []
 
@@ -2412,9 +2411,9 @@ def chunk_into_sections(
                     if total_words >= max_words:
                         break
 
-        # ==================================================================
+     
         # HORIZONTAL PARTITIONING: Assign paragraphs to boundaries by X overlap
-        # ==================================================================
+
 
         boundaries_in_group = all_boundaries[group_start:group_end]
 
